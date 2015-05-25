@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jboss-deployment-structure>
+	<deployment>
+		<dependencies>
+			<!-- module name="deployment.configuration-ear-1.0.5.ear.configuration-ejb-jar-1.0.5.jar" export="true" /-->
+			<module name="draz.api"  export="true"/>
+		</dependencies>
+
+	</deployment>
+</jboss-deployment-structure>

@@ -1,0 +1,7 @@
+draz\connector\http\HTTPResourceAdapter.class
+draz\connector\http\HTTPConnectionFactoryImpl.class
+draz\connector\http\HTTPManagedConnectionFactory.class
+draz\connector\http\HTTPManagedConnectionMetaData.class
+draz\connector\http\HTTPConnectionFactory.class
+draz\connector\http\HTTPConnectionImpl.class
+draz\connector\http\HTTPManagedConnection.class

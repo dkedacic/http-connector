@@ -1,0 +1,24 @@
+
+<ironjacamar xmlns="http://www.ironjacamar.org/doc/schema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ironjacamar.org/doc/schema 
+             http://www.ironjacamar.org/doc/schema/ironjacamar_1_1.xsd">
+
+	<transaction-support>NoTransaction</transaction-support>
+	<connection-definitions>
+		<connection-definition
+			class-name="draz.connector.http.HTTPManagedConnectionFactory"
+			jndi-name="java:/eis/HTTPConnectionFactory" pool-name="HTTPConnectionFactory">
+			<pool>
+				<min-pool-size>0</min-pool-size>
+				<max-pool-size>20</max-pool-size>
+			</pool>
+			<security>
+				<application />
+			</security>
+			<timeout>
+				<idle-timeout-minutes>2</idle-timeout-minutes>
+			</timeout>
+		</connection-definition>
+	</connection-definitions>
+</ironjacamar>

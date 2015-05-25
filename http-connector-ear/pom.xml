@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>draz.connector.http</groupId>
+		<artifactId>http-connector</artifactId>
+		<version>1.0.1</version>
+	</parent>
+
+	<artifactId>http-connector-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<version>6</version>
+					<generateApplicationXml>true</generateApplicationXml>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<filtering>true</filtering>
+					<applicationName>${project.artifactId}</applicationName>
+					<initializeInOrder>true</initializeInOrder>
+					<finalName>${project.artifactId}-${project.version}</finalName>
+					<archive>
+						<manifestEntries>
+							<Dependencies>org.infinispan export</Dependencies>
+						</manifestEntries>
+					</archive>
+					<modules>
+						<ejbModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>http-connector-configuration-ejb</artifactId>
+						</ejbModule>
+						<rarModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>http-connector-rar</artifactId>
+						</rarModule>
+					</modules>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>http-connector-configuration-ejb</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>http-connector-rar</artifactId>
+			<version>${project.version}</version>
+			<type>rar</type>
+		</dependency>
+	</dependencies>
+
+
+</project>
